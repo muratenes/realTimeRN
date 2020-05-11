@@ -13,7 +13,7 @@ export default class App extends Component {
 
     constructor(props) {
         super(props);
-        const localIp = "172.18.0.1";
+        const localIp = "192.168.0.21";
         let channelName = 'user-channel';
         let eventName = '.UserEvent';
 
@@ -22,7 +22,7 @@ export default class App extends Component {
             host: `http://${localIp}:6001`,
             client: Socketio,
         });
-
+        console.log(echo)
         echo.channel(channelName)
             .listen(eventName, event => {
                 console.log('test ge')
